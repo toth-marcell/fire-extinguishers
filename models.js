@@ -3,9 +3,10 @@ import { Sequelize, DataTypes } from "sequelize";
 const sequelize = new Sequelize("sqlite:data/db.sqlite");
 
 export const Extinguisher = sequelize.define("Extinguisher", {
-  uuid: {
+  id: {
     type: DataTypes.UUIDV4,
     allowNull: false,
+    primaryKey: true,
     defaultValue: DataTypes.UUIDV4,
   },
   materialType: {
@@ -26,14 +27,14 @@ export const Extinguisher = sequelize.define("Extinguisher", {
   },
   inspected: {
     type: DataTypes.DATE,
-    allowNull: false,
   },
 });
 
 export const Inspector = sequelize.define("Inspector", {
-  uuid: {
+  id: {
     type: DataTypes.UUIDV4,
     allowNull: false,
+    primaryKey: true,
     defaultValue: DataTypes.UUIDV4,
   },
   name: {
